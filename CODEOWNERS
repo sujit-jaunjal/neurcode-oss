@@ -1,0 +1,9 @@
+# Default owners for the entire repository
+* @neurcode-ai/maintainers
+
+# Package owners
+/packages/cli/ @neurcode-ai/cli-maintainers
+/packages/diff-parser/ @neurcode-ai/core-maintainers
+/packages/github-action/ @neurcode-ai/core-maintainers
+/packages/vscode-ext/ @neurcode-ai/core-maintainers
+

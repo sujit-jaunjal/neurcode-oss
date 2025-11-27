@@ -1,0 +1,7 @@
+packages:
+  - 'cli'
+  - 'diff-parser'
+  - 'policy-engine'
+  - 'github-action'
+  - 'vscode-ext'
+

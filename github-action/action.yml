@@ -1,0 +1,37 @@
+name: 'Neurcode'
+description: 'AI-powered code governance and diff analysis for GitHub PRs'
+author: 'Neurcode'
+branding:
+  icon: 'shield'
+  color: 'blue'
+
+inputs:
+  api-url:
+    description: 'Neurcode API URL (optional, for online mode)'
+    required: false
+    default: ''
+  api-key:
+    description: 'Neurcode API key (optional, for authentication)'
+    required: false
+    default: ''
+  project-id:
+    description: 'Project ID for tracking (optional)'
+    required: false
+    default: ''
+  fail-on-warn:
+    description: 'Fail the check on warnings (default: false, only blocks on BLOCK decision)'
+    required: false
+    default: 'false'
+  annotate-pr:
+    description: 'Add inline annotations to PR (default: true)'
+    required: false
+    default: 'true'
+  add-comment:
+    description: 'Add summary comment to PR (default: true)'
+    required: false
+    default: 'true'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+

@@ -1,0 +1,32 @@
+name: Neurcode Analysis Example
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [main]
+
+jobs:
+  neurcode:
+    runs-on: ubuntu-latest
+    name: Neurcode Code Analysis
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Required: Get full git history for diff analysis
+      
+      - name: Run Neurcode Analysis
+        uses: neurcode/github-action@v1
+        with:
+          # Optional: API configuration for online mode
+          # api-url: ${{ secrets.NEURCODE_API_URL }}
+          # api-key: ${{ secrets.NEURCODE_API_KEY }}
+          # project-id: 'my-project'
+          
+          # Configuration options
+          fail-on-warn: 'false'  # Only fail on BLOCK, not WARN
+          annotate-pr: 'true'    # Add inline annotations
+          add-comment: 'true'    # Add summary comment
+
